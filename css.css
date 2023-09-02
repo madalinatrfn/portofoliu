@@ -1,0 +1,110 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Dosis',sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .4),
+    rgba(148, 48, 48, .2), rgba(167, 67, 67, .4)),
+    url(./images/bg1.jpg) center no-repeat;
+    background-size: cover;
+}
+.navbar{
+    width: 300px;
+    height: 100%;
+    background-color:#d6c2d6;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:160px/55px ;
+    background-image: linear-gradient(#7a527a, #ccccff,  #ffccff) ;
+    transition: right .8s cubic-bezier(1, 0, 0, 1);
+    
+}
+.change{
+    right:0;
+}
+
+ 
+.hamburger-menu{
+    width: 35px;
+    height: 30px;
+    position: fixed;
+    top:40px;
+    right: 40px;
+    cursor:pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+} 
+
+.line{
+    width: 100%;
+    height: 3px;
+    background-color:#ff0000;
+    transition: all 0.8s;
+}
+.change .line-1{
+    transform: rotateZ(-405deg) translate(-8px, 6px);
+}
+.change .line-2{
+    opacity: 0;
+}
+.change .line-3{
+    transform:rotateZ(405deg) translate(-8px,-6px);
+}
+.change .navbar::after{
+    visibility: hidden;
+}
+.nav-list{
+    text-align:right;
+}
+.nav-item{
+    list-style: none;
+    margin:25px;
+}
+.nav-link{
+    text-decoration: none;
+    font-size: 22px;
+    color: #ac00e6;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 3px 0;
+}
+.nav-link::before,
+.nav-link::after{
+    content: "";
+    width:100%;
+    height: 2px;
+    background-color:#0000ff;
+    position: absolute;
+    left:0;
+    transform: scaleX(0);
+    transition: transform 0.6s;
+    
+}
+
+.nav-link::after{
+    bottom:0;
+    transform-origin: right;
+
+}
+.nav-link::before{
+    top:0;
+    transform-origin: left;
+}
+.nav-link:hover::before,
+.nav-link:hover::after{
+    transform: scaleX(1);
+    opacity: 0;
+}
